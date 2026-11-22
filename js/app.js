@@ -15,8 +15,8 @@
 
 // ---------- 1) Configuração ----------
 
-// TODO: troque pelo endereço real do repositório quando ele for criado.
-const REPOSITORIO = "https://github.com/acelera-dev/acelera-le";
+// Endereço do repositório no GitHub (usado no rodapé e no "Sugerir livro").
+const REPOSITORIO = "https://github.com/pbosoares/acelera-le";
 
 // Nome do arquivo do modelo de issue em .github/ISSUE_TEMPLATE/
 const MODELO_SUGESTAO = "sugerir-livro.yml";
