@@ -1,6 +1,8 @@
 # Acelera Lê!
 
 > A estante de leitura da comunidade **Acelera Dev**.
+>
+> **Acesse:** https://pbosoares.github.io/acelera-le/
 
 Muita gente que está começando na programação não sabe o que ler. O **Acelera Lê!** é uma biblioteca visual de roadmaps de leitura: cada tema tem uma estante com até **7 livros**, em ordem do **iniciante ao avançado**.
 
@@ -30,4 +32,4 @@ Próximas: [docs/estantes/proximas.md](docs/estantes/proximas.md)
 - [x] Curadoria v1 das 5 estantes
 - [ ] Conferir as edições em português marcadas como "confirmar"
 - [x] Protótipo navegável (abra o `index.html`)
-- [ ] Publicar no GitHub Pages
+- [x] Publicado no GitHub Pages: https://pbosoares.github.io/acelera-le/
