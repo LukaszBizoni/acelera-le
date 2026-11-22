@@ -66,6 +66,17 @@ a:hover { color: #5cf0c8; }
   outline-offset: 3px;
 }
 
+/* No celular, o navegador pinta um quadrado azul ao tocar em botões e links.
+   Desligamos esse destaque; o retorno visual fica por conta dos nossos estilos. */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+/* Foco vindo de toque ou clique não mostra contorno (só o teclado mostra) */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* Texto só para leitores de tela */
 .so-leitor {
   position: absolute;
@@ -392,8 +403,14 @@ a:hover { color: #5cf0c8; }
   text-rendering: optimizeLegibility;
   transition: transform .18s ease, box-shadow .18s ease;
 }
-/* Livro "sai" da prateleira ao passar o mouse ou receber foco */
-.lombada:hover,
+/* Livro "sai" da prateleira ao passar o mouse ou receber foco pelo teclado.
+   O hover só vale em aparelhos com mouse: no celular ele ficaria "preso" depois do toque. */
+@media (hover: hover) {
+  .lombada:hover {
+    transform: translateY(-14px);
+    box-shadow: 0 16px 24px rgba(0,0,0,.6), 0 0 0 2px rgba(0, 224, 164, .55);
+  }
+}
 .lombada:focus-visible {
   transform: translateY(-14px);
   box-shadow: 0 16px 24px rgba(0,0,0,.6), 0 0 0 2px rgba(0, 224, 164, .55);

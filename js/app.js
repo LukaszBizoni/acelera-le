@@ -377,11 +377,20 @@ function prepararPainel() {
   });
 
   // O Esc já fecha o <dialog> sozinho. Ao fechar, o foco volta para a lombada.
+  // Só mostramos o contorno de foco se a pessoa está usando o teclado
+  // (no celular, depois de um toque, o contorno aparecia sem necessidade).
   painel.addEventListener("close", () => {
-    if (lombadaQueAbriu) lombadaQueAbriu.focus();
+    if (lombadaQueAbriu) {
+      lombadaQueAbriu.focus({ preventScroll: true, focusVisible: usandoTeclado });
+    }
     livroAberto = null;
   });
 }
+
+// Descobre se a pessoa está navegando pelo teclado ou por toque/mouse
+let usandoTeclado = false;
+document.addEventListener("keydown", () => { usandoTeclado = true; });
+document.addEventListener("pointerdown", () => { usandoTeclado = false; });
 
 // ---------- 6) Sugerir livro e zerar progresso ----------
 
