@@ -2,7 +2,6 @@
 
 Ainda não curadas. Use o mesmo formato de tabela das outras estantes (até 7 livros, do iniciante ao avançado, só livros que existem, indicando a edição em PT).
 
-- [ ] JavaScript / Front-end
 - [ ] DevOps
 - [ ] Carreira
 

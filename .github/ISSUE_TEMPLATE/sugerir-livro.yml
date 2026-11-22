@@ -15,6 +15,7 @@ body:
       options:
         - Java
         - Python
+        - JavaScript / Front-end
         - Inteligência Artificial
         - Engenharia de Software
         - Banco de Dados

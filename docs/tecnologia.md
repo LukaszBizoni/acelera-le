@@ -31,6 +31,7 @@ acelera-le/
 │   └── estantes/
 │       ├── java.md
 │       ├── python.md
+│       ├── javascript.md
 │       ├── ia.md
 │       ├── engenharia-de-software.md
 │       ├── banco-de-dados.md

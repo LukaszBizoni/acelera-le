@@ -259,6 +259,129 @@
       ]
     },
     {
+      "id": "javascript",
+      "nome": "JavaScript / Front-end",
+      "descricao": "Do primeiro HTML até dominar JavaScript e TypeScript.",
+      "livros": [
+        {
+          "degrau": 1,
+          "titulo": "Use a Cabeça! HTML e CSS",
+          "tituloOriginal": "Head First HTML and CSS",
+          "autores": [
+            "Elisabeth Robson",
+            "Eric Freeman"
+          ],
+          "nivel": "iniciante",
+          "porque": "A base de toda página web, com a didática visual da série; não exige experiência.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Alta Books"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#9B2C22"
+        },
+        {
+          "degrau": 2,
+          "titulo": "Lógica de Programação e Algoritmos com JavaScript, 2ª ed.",
+          "tituloOriginal": null,
+          "autores": [
+            "Edécio Fernando Iepsen"
+          ],
+          "nivel": "iniciante",
+          "porque": "Autor brasileiro; lógica do zero já ligando JavaScript a páginas HTML, com muitos exercícios.",
+          "edicaoPt": {
+            "status": "original"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#24506B"
+        },
+        {
+          "degrau": 3,
+          "titulo": "Eloquent JavaScript",
+          "tituloOriginal": null,
+          "autores": [
+            "Marijn Haverbeke"
+          ],
+          "nivel": "intermediario",
+          "porque": "A linguagem a fundo, com projetos no fim de cada parte; gratuito online (há tradução comunitária em PT).",
+          "edicaoPt": {
+            "status": "nao"
+          },
+          "link": "https://eloquentjavascript.net/",
+          "gratuito": true,
+          "cor": "#2E5A3A"
+        },
+        {
+          "degrau": 4,
+          "titulo": "CSS Secrets",
+          "tituloOriginal": null,
+          "autores": [
+            "Lea Verou"
+          ],
+          "nivel": "intermediario",
+          "porque": "Soluções elegantes para problemas reais de CSS, de quem participa do grupo que define a linguagem.",
+          "edicaoPt": {
+            "status": "nao"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#6A3C10"
+        },
+        {
+          "degrau": 5,
+          "titulo": "Aprendendo TypeScript",
+          "tituloOriginal": "Learning TypeScript",
+          "autores": [
+            "Josh Goldberg"
+          ],
+          "nivel": "intermediario",
+          "porque": "Tipos do zero até o domínio dos fundamentos de TypeScript, para quem já escreve JavaScript.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Novatec"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#213A6B"
+        },
+        {
+          "degrau": 6,
+          "titulo": "JavaScript: O Guia Definitivo, 7ª ed.",
+          "tituloOriginal": "JavaScript: The Definitive Guide",
+          "autores": [
+            "David Flanagan"
+          ],
+          "nivel": "avancado",
+          "porque": "A referência completa da linguagem moderna: classes, módulos, iteradores, promises e async/await.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Bookman"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#5B2A4A"
+        },
+        {
+          "degrau": 7,
+          "titulo": "You Don't Know JS Yet",
+          "tituloOriginal": null,
+          "autores": [
+            "Kyle Simpson"
+          ],
+          "nivel": "avancado",
+          "porque": "Escopo, closures, objetos e tipos por dentro: para entender por que o JavaScript se comporta como se comporta; gratuito online.",
+          "edicaoPt": {
+            "status": "nao"
+          },
+          "link": "https://github.com/getify/You-Dont-Know-JS",
+          "gratuito": true,
+          "cor": "#3B3B48"
+        }
+      ]
+    },
+    {
       "id": "ia",
       "nome": "Inteligência Artificial",
       "descricao": "Dos fundamentos de dados até construir produtos com LLMs.",
