@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acelera Lê! · A estante de leitura da Acelera Dev</title>
+  <meta name="description" content="Roadmaps de leitura para quem está começando na programação: uma estante por tema, do iniciante ao avançado.">
+  <link rel="stylesheet" href="css/estilo.css">
+  <!-- Ícone da aba: um livro desenhado em SVG, sem arquivo externo -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='6' y='3' width='9' height='26' rx='1.5' fill='%23E8A13A'/%3E%3Crect x='17' y='6' width='9' height='23' rx='1.5' fill='%239B2C22'/%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="pular" href="#estantes">Pular para as estantes</a>
+
+  <!-- ===== Topo ===== -->
+  <header class="topo">
+    <div class="topo__conteudo">
+      <h1 class="logo">Acelera <span>Lê!</span></h1>
+      <p class="subtitulo">A estante de leitura da Acelera Dev</p>
+      <p class="explicacao">
+        Cada tema é uma prateleira com até 7 livros. Leia da esquerda para a direita:
+        o primeiro é para quem está começando, o último é para quem já tem estrada.
+      </p>
+
+      <!-- Legenda dos níveis (a cor também aparece na base de cada lombada) -->
+      <ul class="legenda" aria-label="Legenda de níveis">
+        <li><span class="legenda__cor legenda__cor--iniciante" aria-hidden="true"></span>Iniciante</li>
+        <li><span class="legenda__cor legenda__cor--intermediario" aria-hidden="true"></span>Intermediário</li>
+        <li><span class="legenda__cor legenda__cor--avancado" aria-hidden="true"></span>Avançado</li>
+      </ul>
+    </div>
+
+    <!-- Chips de tema: preenchidos pelo js/app.js -->
+    <nav class="temas" aria-label="Temas">
+      <ul class="temas__lista" id="temas"></ul>
+    </nav>
+  </header>
+
+  <!-- ===== Estantes ===== -->
+  <main id="estantes" class="estantes" tabindex="-1">
+    <p class="carregando" id="carregando">Arrumando a estante…</p>
+  </main>
+
+  <!-- ===== Rodapé ===== -->
+  <footer class="rodape">
+    <div class="rodape__acoes">
+      <a class="botao botao--destaque" id="sugerir-livro" href="#" target="_blank" rel="noopener">Sugerir livro</a>
+      <button class="botao botao--discreto" id="zerar-progresso" type="button">Zerar meu progresso</button>
+    </div>
+    <p>
+      Feito pela comunidade <strong>Acelera Dev</strong> ·
+      <a id="link-repositorio" href="#" target="_blank" rel="noopener">código no GitHub</a>
+    </p>
+    <p class="rodape__nota">Seu progresso fica salvo só neste navegador. Sem login, sem servidor.</p>
+  </footer>
+
+  <!-- ===== Painel de detalhes do livro =====
+       <dialog> já cuida do foco e fecha com Esc.
+       No desktop vira um painel lateral; no celular, uma gaveta que sobe. -->
+  <dialog class="painel" id="painel" aria-labelledby="painel-titulo">
+    <div class="painel__caixa">
+      <button class="painel__fechar" type="button" data-fechar aria-label="Fechar detalhes">×</button>
+
+      <p class="painel__degrau" id="painel-degrau"></p>
+      <h2 class="painel__titulo" id="painel-titulo"></h2>
+      <p class="painel__original" id="painel-original"></p>
+      <p class="painel__autores" id="painel-autores"></p>
+
+      <h3>Por que está aqui</h3>
+      <p id="painel-porque"></p>
+
+      <h3>Edição em português</h3>
+      <p id="painel-edicao"></p>
+
+      <p id="painel-link-area" hidden>
+        <a id="painel-link" href="#" target="_blank" rel="noopener"></a>
+      </p>
+
+      <button class="botao botao--destaque painel__lido" id="painel-lido" type="button" aria-pressed="false"></button>
+
+      <div class="painel__navegacao">
+        <button class="botao botao--discreto" id="painel-anterior" type="button">← Anterior</button>
+        <button class="botao botao--discreto" id="painel-proximo" type="button">Próximo →</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Aviso para leitores de tela (ex.: "Marcado como lido") -->
+  <p class="so-leitor" id="aviso" aria-live="polite"></p>
+
+  <!-- Plano B dos dados: quando o site é aberto com dois cliques (file://),
+       o navegador bloqueia a leitura do JSON. Este arquivo é uma cópia dele.
+       Gere de novo com: node ferramentas/gerar-estantes-js.js -->
+  <script src="dados/estantes.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

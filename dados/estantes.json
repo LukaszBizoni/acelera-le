@@ -1,0 +1,459 @@
+{
+  "estantes": [
+    {
+      "id": "java",
+      "nome": "Java",
+      "descricao": "Da primeira classe até a JVM em produção.",
+      "livros": [
+        {
+          "degrau": 1,
+          "titulo": "Use a Cabeça! Java",
+          "tituloOriginal": "Head First Java",
+          "autores": ["Kathy Sierra", "Bert Bates"],
+          "nivel": "iniciante",
+          "porque": "Didática visual; ensina OO e a linguagem do zero sem assustar.",
+          "edicaoPt": { "status": "sim", "editora": "Alta Books" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#9B2C22"
+        },
+        {
+          "degrau": 2,
+          "titulo": "Código Limpo",
+          "tituloOriginal": "Clean Code",
+          "autores": ["Robert C. Martin"],
+          "nivel": "intermediario",
+          "porque": "Primeiro contato com \"código bom\"; os exemplos são em Java.",
+          "edicaoPt": { "status": "sim", "editora": "Alta Books" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#1F4E5F"
+        },
+        {
+          "degrau": 3,
+          "titulo": "Java Efetivo, 3ª ed.",
+          "tituloOriginal": "Effective Java",
+          "autores": ["Joshua Bloch"],
+          "nivel": "intermediario",
+          "porque": "90 itens de boas práticas da própria linguagem; pressupõe que você já programa em Java.",
+          "edicaoPt": { "status": "sim", "editora": "Alta Books" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#7A4A12"
+        },
+        {
+          "degrau": 4,
+          "titulo": "Modern Java in Action",
+          "tituloOriginal": null,
+          "autores": ["Raoul-Gabriel Urma", "Mario Fusco", "Alan Mycroft"],
+          "nivel": "intermediario",
+          "porque": "Streams, lambdas, Optional e programação funcional/reativa no Java moderno.",
+          "edicaoPt": { "status": "confirmar", "nota": "Não confirmada" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#2E5A3A"
+        },
+        {
+          "degrau": 5,
+          "titulo": "Spring in Action, 6ª ed.",
+          "tituloOriginal": null,
+          "autores": ["Craig Walls"],
+          "nivel": "intermediario",
+          "porque": "Ponte para o mercado: Spring Boot, web, dados e segurança.",
+          "edicaoPt": { "status": "confirmar", "nota": "Edições antigas em PT: confirmar" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#3D5A1E"
+        },
+        {
+          "degrau": 6,
+          "titulo": "Java Concurrency in Practice",
+          "tituloOriginal": null,
+          "autores": ["Brian Goetz et al."],
+          "nivel": "avancado",
+          "porque": "A referência sobre concorrência e threads na JVM; leitura densa.",
+          "edicaoPt": { "status": "nao" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#213A6B"
+        },
+        {
+          "degrau": 7,
+          "titulo": "Java Performance, 2ª ed.",
+          "tituloOriginal": null,
+          "autores": ["Scott Oaks"],
+          "nivel": "avancado",
+          "porque": "JVM, garbage collector, JIT e profiling, para quem já opera sistemas em produção.",
+          "edicaoPt": { "status": "nao" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#5B2A4A"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "nome": "Python",
+      "descricao": "Do primeiro script até arquitetura e performance.",
+      "livros": [
+        {
+          "degrau": 1,
+          "titulo": "Curso Intensivo de Python",
+          "tituloOriginal": "Python Crash Course",
+          "autores": ["Eric Matthes"],
+          "nivel": "iniciante",
+          "porque": "Fundamentos + 3 projetos práticos; é o mais recomendado para começar.",
+          "edicaoPt": { "status": "sim", "editora": "Novatec" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#1E4D7A"
+        },
+        {
+          "degrau": 2,
+          "titulo": "Automatize Tarefas Maçantes com Python",
+          "tituloOriginal": "Automate the Boring Stuff",
+          "autores": ["Al Sweigart"],
+          "nivel": "iniciante",
+          "porque": "Aplica o básico em problemas reais: planilhas, arquivos, web.",
+          "edicaoPt": { "status": "sim", "editora": "Novatec" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#8A3B12"
+        },
+        {
+          "degrau": 3,
+          "titulo": "Python para Análise de Dados",
+          "tituloOriginal": "Python for Data Analysis",
+          "autores": ["Wes McKinney"],
+          "nivel": "intermediario",
+          "porque": "pandas e NumPy explicados pelo criador do pandas; é a porta de entrada para dados e IA.",
+          "edicaoPt": { "status": "sim", "editora": "Novatec" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#2B5B57"
+        },
+        {
+          "degrau": 4,
+          "titulo": "Python Eficaz",
+          "tituloOriginal": "Effective Python",
+          "autores": ["Brett Slatkin"],
+          "nivel": "intermediario",
+          "porque": "Itens curtos de boas práticas \"pythônicas\"; bom depois de dominar a sintaxe.",
+          "edicaoPt": { "status": "confirmar", "editora": "Novatec", "nota": "Sim (Novatec), confirmar edição" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#6B2A45"
+        },
+        {
+          "degrau": 5,
+          "titulo": "Python Fluente",
+          "tituloOriginal": "Fluent Python",
+          "autores": ["Luciano Ramalho"],
+          "nivel": "avancado",
+          "porque": "Autor brasileiro; mergulho no modelo de dados, iteradores e concorrência.",
+          "edicaoPt": { "status": "confirmar", "editora": "Novatec", "nota": "Sim (Novatec), confirmar 2ª ed." },
+          "link": null,
+          "gratuito": false,
+          "cor": "#3A3F7A"
+        },
+        {
+          "degrau": 6,
+          "titulo": "Architecture Patterns with Python",
+          "tituloOriginal": "\"Cosmic Python\"",
+          "autores": ["Harry Percival", "Bob Gregory"],
+          "nivel": "avancado",
+          "porque": "DDD, TDD e ports & adapters aplicados em Python; gratuito online.",
+          "edicaoPt": { "status": "nao" },
+          "link": "https://www.cosmicpython.com/",
+          "gratuito": true,
+          "cor": "#4A3520"
+        },
+        {
+          "degrau": 7,
+          "titulo": "High Performance Python",
+          "tituloOriginal": null,
+          "autores": ["Micha Gorelick", "Ian Ozsvald"],
+          "nivel": "avancado",
+          "porque": "Profiling, Cython e paralelismo, para quando \"funciona\" não basta.",
+          "edicaoPt": { "status": "confirmar" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#7A1F2B"
+        }
+      ]
+    },
+    {
+      "id": "ia",
+      "nome": "Inteligência Artificial",
+      "descricao": "Do \"o que é IA\" até construir produtos com LLMs.",
+      "livros": [
+        {
+          "degrau": 1,
+          "titulo": "Artificial Intelligence: A Guide for Thinking Humans",
+          "tituloOriginal": null,
+          "autores": ["Melanie Mitchell"],
+          "nivel": "iniciante",
+          "porque": "Explica o que a IA faz (e o que não faz) sem matemática; dá o mapa antes do código.",
+          "edicaoPt": { "status": "confirmar" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#254E70"
+        },
+        {
+          "degrau": 2,
+          "titulo": "Mãos à Obra: Aprendizado de Máquina com Scikit-Learn, Keras & TensorFlow",
+          "tituloOriginal": null,
+          "autores": ["Aurélien Géron"],
+          "nivel": "intermediario",
+          "porque": "O melhor livro prático de machine learning; exige Python básico.",
+          "edicaoPt": { "status": "sim", "editora": "Alta Books" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#8C3A1C"
+        },
+        {
+          "degrau": 3,
+          "titulo": "An Introduction to Statistical Learning (with Applications in Python)",
+          "tituloOriginal": null,
+          "autores": ["Gareth James", "Daniela Witten", "Trevor Hastie", "Robert Tibshirani", "Jonathan Taylor"],
+          "nivel": "intermediario",
+          "porque": "A base estatística por trás dos modelos; PDF gratuito oficial.",
+          "edicaoPt": { "status": "nao" },
+          "link": "https://www.statlearning.com/",
+          "gratuito": true,
+          "cor": "#2F5D3A"
+        },
+        {
+          "degrau": 4,
+          "titulo": "Deep Learning with Python, 2ª ed.",
+          "tituloOriginal": null,
+          "autores": ["François Chollet"],
+          "nivel": "intermediario",
+          "porque": "Redes neurais explicadas pelo criador do Keras.",
+          "edicaoPt": { "status": "confirmar" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#5A2D6B"
+        },
+        {
+          "degrau": 5,
+          "titulo": "Build a Large Language Model (From Scratch)",
+          "tituloOriginal": null,
+          "autores": ["Sebastian Raschka"],
+          "nivel": "avancado",
+          "porque": "Constrói um GPT pequeno passo a passo para entender os LLMs por dentro.",
+          "edicaoPt": { "status": "nao" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#7A5210"
+        },
+        {
+          "degrau": 6,
+          "titulo": "AI Engineering",
+          "tituloOriginal": null,
+          "autores": ["Chip Huyen"],
+          "nivel": "avancado",
+          "porque": "Construir produtos com modelos de fundação: avaliação, RAG, agentes e custo.",
+          "edicaoPt": { "status": "nao" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#1F4F55"
+        },
+        {
+          "degrau": 7,
+          "titulo": "Deep Learning",
+          "tituloOriginal": null,
+          "autores": ["Ian Goodfellow", "Yoshua Bengio", "Aaron Courville"],
+          "nivel": "avancado",
+          "porque": "O livro-texto teórico de referência; gratuito online.",
+          "edicaoPt": { "status": "nao" },
+          "link": "https://www.deeplearningbook.org/",
+          "gratuito": true,
+          "cor": "#3B3B48"
+        }
+      ]
+    },
+    {
+      "id": "engenharia-de-software",
+      "nome": "Engenharia de Software",
+      "descricao": "Dos bons hábitos até sistemas distribuídos.",
+      "livros": [
+        {
+          "degrau": 1,
+          "titulo": "O Programador Pragmático",
+          "tituloOriginal": "The Pragmatic Programmer",
+          "autores": ["Andrew Hunt", "David Thomas"],
+          "nivel": "iniciante",
+          "porque": "Mentalidade e hábitos de um bom profissional, independente da linguagem.",
+          "edicaoPt": { "status": "confirmar", "nota": "Sim, confirmar editora da edição de 20 anos" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#8E2F25"
+        },
+        {
+          "degrau": 2,
+          "titulo": "Entendendo Algoritmos",
+          "tituloOriginal": "Grokking Algorithms",
+          "autores": ["Aditya Bhargava"],
+          "nivel": "iniciante",
+          "porque": "Algoritmos e estruturas de dados ilustrados; tira o medo do tema.",
+          "edicaoPt": { "status": "sim", "editora": "Novatec" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#285A6E"
+        },
+        {
+          "degrau": 3,
+          "titulo": "Engenharia de Software Moderna",
+          "tituloOriginal": null,
+          "autores": ["Marco Tulio Valente"],
+          "nivel": "intermediario",
+          "porque": "Autor brasileiro (UFMG), gratuito online; visão geral de processos, testes e arquitetura.",
+          "edicaoPt": { "status": "original" },
+          "link": "https://engsoftmoderna.info/",
+          "gratuito": true,
+          "cor": "#2E5A32"
+        },
+        {
+          "degrau": 4,
+          "titulo": "Refatoração, 2ª ed.",
+          "tituloOriginal": "Refactoring",
+          "autores": ["Martin Fowler"],
+          "nivel": "intermediario",
+          "porque": "Como melhorar código existente com segurança; traz um catálogo de técnicas.",
+          "edicaoPt": { "status": "sim", "editora": "Novatec" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#6E4515"
+        },
+        {
+          "degrau": 5,
+          "titulo": "Padrões de Projeto",
+          "tituloOriginal": "Design Patterns, \"GoF\"",
+          "autores": ["Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"],
+          "nivel": "avancado",
+          "porque": "Vocabulário clássico de design orientado a objetos; denso, melhor com experiência.",
+          "edicaoPt": { "status": "sim", "editora": "Bookman" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#4B2E63"
+        },
+        {
+          "degrau": 6,
+          "titulo": "Arquitetura Limpa",
+          "tituloOriginal": "Clean Architecture",
+          "autores": ["Robert C. Martin"],
+          "nivel": "avancado",
+          "porque": "Princípios de arquitetura e de dependência entre camadas.",
+          "edicaoPt": { "status": "sim", "editora": "Alta Books" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#1E3F66"
+        },
+        {
+          "degrau": 7,
+          "titulo": "Designing Data-Intensive Applications",
+          "tituloOriginal": null,
+          "autores": ["Martin Kleppmann"],
+          "nivel": "avancado",
+          "porque": "Bancos, filas, replicação e consistência: a base de sistemas distribuídos.",
+          "edicaoPt": { "status": "confirmar" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#702437"
+        }
+      ]
+    },
+    {
+      "id": "design-system",
+      "nome": "Design System",
+      "descricao": "Da usabilidade básica até componentes acessíveis em escala.",
+      "livros": [
+        {
+          "degrau": 1,
+          "titulo": "Não Me Faça Pensar",
+          "tituloOriginal": "Don't Make Me Think",
+          "autores": ["Steve Krug"],
+          "nivel": "iniciante",
+          "porque": "Usabilidade em poucas horas de leitura; base para qualquer interface.",
+          "edicaoPt": { "status": "sim", "editora": "Alta Books" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#93321F"
+        },
+        {
+          "degrau": 2,
+          "titulo": "Refactoring UI",
+          "tituloOriginal": null,
+          "autores": ["Adam Wathan", "Steve Schoger"],
+          "nivel": "iniciante",
+          "porque": "Design visual escrito para devs: espaçamento, hierarquia e cor.",
+          "edicaoPt": { "status": "nao" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#24506B"
+        },
+        {
+          "degrau": 3,
+          "titulo": "Atomic Design",
+          "tituloOriginal": null,
+          "autores": ["Brad Frost"],
+          "nivel": "intermediario",
+          "porque": "O modelo átomos → moléculas → organismos → páginas que fundou a prática; gratuito online.",
+          "edicaoPt": { "status": "nao" },
+          "link": "https://atomicdesign.bradfrost.com/",
+          "gratuito": true,
+          "cor": "#2F5B45"
+        },
+        {
+          "degrau": 4,
+          "titulo": "Design Systems",
+          "tituloOriginal": null,
+          "autores": ["Alla Kholmatova"],
+          "nivel": "intermediario",
+          "porque": "Padrões funcionais e de percepção; como equipes criam uma linguagem comum.",
+          "edicaoPt": { "status": "nao" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#6A3C10"
+        },
+        {
+          "degrau": 5,
+          "titulo": "Laying the Foundations",
+          "tituloOriginal": null,
+          "autores": ["Andrew Couldwell"],
+          "nivel": "avancado",
+          "porque": "Guia prático para montar e documentar um design system do zero.",
+          "edicaoPt": { "status": "nao" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#56306B"
+        },
+        {
+          "degrau": 6,
+          "titulo": "Expressive Design Systems",
+          "tituloOriginal": null,
+          "autores": ["Yesenia Perez-Cruz"],
+          "nivel": "avancado",
+          "porque": "Como escalar o sistema sem perder a identidade da marca.",
+          "edicaoPt": { "status": "nao" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#1D4552"
+        },
+        {
+          "degrau": 7,
+          "titulo": "Inclusive Components",
+          "tituloOriginal": null,
+          "autores": ["Heydon Pickering"],
+          "nivel": "avancado",
+          "porque": "Componentes acessíveis de verdade: menus, abas, modais.",
+          "edicaoPt": { "status": "nao" },
+          "link": null,
+          "gratuito": false,
+          "cor": "#7A2A3A"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,600 @@
+/* =========================================================
+   Acelera Lê! · estilos
+   Organização: 1) variáveis  2) base  3) topo  4) estantes
+   5) lombadas  6) painel  7) rodapé  8) celular
+   ========================================================= */
+
+/* ---------- 1) Variáveis (cores e medidas) ---------- */
+:root {
+  /* Fundo de biblioteca: marrom bem escuro, quase preto */
+  --fundo: #17110c;
+  --fundo-claro: #221912;
+  --texto: #f6eee1;          /* creme: contraste alto sobre o fundo */
+  --texto-suave: #cbbba6;    /* ainda passa no WCAG AA sobre o fundo */
+  --destaque: #e8a13a;       /* âmbar da marca */
+  --destaque-escuro: #1b130b;/* texto sobre o âmbar */
+  --linha: #3a2c20;
+
+  /* Madeira da prateleira */
+  --madeira: #6b4325;
+  --madeira-clara: #8a5a32;
+  --madeira-escura: #3f2714;
+
+  /* Níveis (faixa na base da lombada) */
+  --iniciante: #4cbf6b;
+  --intermediario: #f2c94c;
+  --avancado: #e5534b;
+
+  /* Fita de "lido" */
+  --fita: #e8a13a;
+
+  --raio: 10px;
+  --largura-max: 1080px;
+  --fonte: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fonte-titulo: Georgia, "Times New Roman", serif;
+}
+
+/* ---------- 2) Base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: var(--fonte);
+  font-size: 16px;
+  line-height: 1.5;
+  /* Um leve brilho quente no alto, como uma luminária */
+  background-image: radial-gradient(ellipse 80% 40% at 50% 0%, #3a2616 0%, transparent 70%);
+  background-repeat: no-repeat;
+}
+
+a { color: var(--destaque); }
+a:hover { color: #f4c06e; }
+
+/* Contorno de foco bem visível para quem navega pelo teclado */
+:focus-visible {
+  outline: 3px solid var(--destaque);
+  outline-offset: 3px;
+}
+
+/* Texto só para leitores de tela */
+.so-leitor {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Link "pular para as estantes": aparece só ao receber foco */
+.pular {
+  position: absolute;
+  left: 16px; top: -60px;
+  background: var(--destaque);
+  color: var(--destaque-escuro);
+  padding: 8px 14px;
+  border-radius: var(--raio);
+  font-weight: 700;
+  z-index: 10;
+}
+.pular:focus { top: 12px; }
+
+/* Botões reutilizáveis */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;           /* área de toque confortável */
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.botao--destaque {
+  background: var(--destaque);
+  color: var(--destaque-escuro);
+}
+.botao--destaque:hover { background: #f4b75a; color: var(--destaque-escuro); }
+.botao--discreto {
+  background: transparent;
+  color: var(--texto);
+  border-color: var(--linha);
+}
+.botao--discreto:hover { border-color: var(--texto-suave); }
+.botao:disabled { opacity: .45; cursor: not-allowed; }
+
+/* ---------- 3) Topo ---------- */
+.topo {
+  padding: 48px 16px 0;
+  text-align: center;
+}
+.topo__conteudo {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.logo {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.4rem, 7vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+.logo span { color: var(--destaque); }
+.subtitulo {
+  margin: 6px 0 0;
+  font-size: 1.1rem;
+  color: var(--texto-suave);
+}
+.explicacao {
+  margin: 18px auto 0;
+  max-width: 52ch;
+}
+
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 20px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: .95rem;
+  color: var(--texto-suave);
+}
+.legenda li { display: inline-flex; align-items: center; gap: 8px; }
+.legenda__cor {
+  width: 22px; height: 8px;
+  border-radius: 2px;
+}
+.legenda__cor--iniciante { background: var(--iniciante); }
+.legenda__cor--intermediario { background: var(--intermediario); }
+.legenda__cor--avancado { background: var(--avancado); }
+
+/* Chips de tema: ficam grudados no topo ao rolar */
+.temas {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  margin-top: 28px;
+  padding: 12px 0;
+  background: rgba(23, 17, 12, .94);
+  border-bottom: 1px solid var(--linha);
+}
+.temas__lista {
+  display: flex;
+  gap: 8px;
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 0 16px;
+  list-style: none;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.chip {
+  min-height: 40px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--linha);
+  background: var(--fundo-claro);
+  color: var(--texto);
+  font: inherit;
+  font-size: .95rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.chip:hover { border-color: var(--texto-suave); }
+.chip[aria-current="true"] {
+  background: var(--destaque);
+  border-color: var(--destaque);
+  color: var(--destaque-escuro);
+  font-weight: 700;
+}
+
+/* ---------- 4) Estantes ---------- */
+.estantes {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 24px 16px 8px;
+}
+.estantes:focus { outline: none; }
+.carregando, .erro {
+  text-align: center;
+  color: var(--texto-suave);
+  padding: 48px 0;
+}
+
+.estante {
+  /* Espaço para o topo grudado não cobrir o título ao pular pelo chip */
+  scroll-margin-top: 80px;
+  margin: 0 0 56px;
+}
+.estante__cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-bottom: 18px;
+}
+.estante__nome {
+  margin: 0;
+  font-family: var(--fonte-titulo);
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+.estante__descricao {
+  margin: 2px 0 0;
+  color: var(--texto-suave);
+}
+
+/* Progresso "3/7 lidos" + barrinha */
+.progresso {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .95rem;
+  color: var(--texto-suave);
+}
+.progresso__barra {
+  width: 120px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--linha);
+  overflow: hidden;
+}
+.progresso__preenchido {
+  height: 100%;
+  width: 0;
+  background: var(--destaque);
+  border-radius: inherit;
+  transition: width .3s ease;
+}
+
+/* A prateleira: os livros ficam em pé sobre a tábua */
+.prateleira {
+  position: relative;
+  padding: 28px 20px 0;
+  border-radius: 6px 6px 0 0;
+  /* Fundo do nicho da estante, mais escuro que a madeira */
+  background: linear-gradient(180deg, #120d09 0%, #1d150e 100%);
+  box-shadow: inset 0 10px 24px rgba(0, 0, 0, .6);
+}
+.prateleira__livros {
+  display: flex;
+  align-items: flex-end;   /* todos apoiados na tábua */
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  min-height: 330px;
+}
+.prateleira__livros li { display: flex; }
+
+/* A tábua de madeira embaixo dos livros */
+.prateleira__tabua {
+  height: 22px;
+  margin: 0 -20px;
+  border-radius: 0 0 4px 4px;
+  background:
+    repeating-linear-gradient(92deg, rgba(0,0,0,.08) 0 3px, transparent 3px 11px),
+    linear-gradient(180deg, var(--madeira-clara) 0%, var(--madeira) 45%, var(--madeira-escura) 100%);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, .55);
+}
+
+/* Botão "sugerir livro para esta estante", ao lado do progresso */
+.estante__sugerir {
+  font-size: .9rem;
+  color: var(--texto-suave);
+}
+
+/* ---------- 5) Lombadas ---------- */
+.lombada {
+  /* Altura e largura variam por livro (definidas pelo JS em --altura/--largura) */
+  --altura: 220px;
+  --largura: 62px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: var(--largura);
+  height: var(--altura);
+  padding: 10px 4px 0;
+  border: 0;
+  border-radius: 3px 3px 1px 1px;
+  background-color: var(--cor, #444);
+  /* Brilho e sombra que dão volume de livro */
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,.35) 0%, rgba(255,255,255,.10) 18%, rgba(255,255,255,0) 40%, rgba(0,0,0,.28) 100%);
+  color: #fbf6ec;
+  font: inherit;
+  cursor: pointer;
+  box-shadow: 2px 0 0 rgba(0,0,0,.35);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+/* Livro "sai" da prateleira ao passar o mouse ou receber foco */
+.lombada:hover,
+.lombada:focus-visible {
+  transform: translateY(-14px);
+  box-shadow: 0 14px 18px rgba(0,0,0,.55), 2px 0 0 rgba(0,0,0,.35);
+}
+.lombada:focus-visible { outline-offset: 2px; }
+
+/* Selo com o número do degrau */
+.lombada__degrau {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: #fbf6ec;
+  color: #1b130b;
+  font-size: .85rem;
+  font-weight: 800;
+}
+
+/* Título escrito em pé */
+.lombada__titulo {
+  flex: 1;
+  min-height: 0;
+  margin-top: 10px;
+  writing-mode: vertical-rl;
+  font-family: var(--fonte-titulo);
+  font-size: .98rem;
+  font-weight: 700;
+  line-height: 1.15;
+  /* Até 3 colunas de texto (3 × line-height): o corte cai entre colunas, nunca no meio da letra */
+  max-width: 3.45em;
+  overflow: hidden;
+  text-align: start;
+}
+.lombada__autor {
+  flex: none;
+  max-height: 34%;
+  margin: 8px 0 8px;
+  writing-mode: vertical-rl;
+  font-size: .72rem;
+  opacity: .92;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Faixa de nível na base */
+.lombada__nivel {
+  flex: none;
+  width: calc(100% + 8px);
+  height: 12px;
+  margin: 0 -4px;
+  border-radius: 0 0 1px 1px;
+}
+.lombada--iniciante .lombada__nivel { background: var(--iniciante); }
+.lombada--intermediario .lombada__nivel { background: var(--intermediario); }
+.lombada--avancado .lombada__nivel { background: var(--avancado); }
+
+/* Livro lido: fita marcadora pendurada + ✓ */
+.lombada__fita { display: none; }
+.lombada--lido .lombada__fita {
+  display: block;
+  position: absolute;
+  top: -6px;
+  right: 9px;
+  width: 12px;
+  height: 46px;
+  background: var(--fita);
+  /* Corte em "V" na ponta da fita */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+  box-shadow: 0 2px 3px rgba(0,0,0,.35);
+}
+.lombada__check { display: none; }
+.lombada--lido .lombada__check {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 18px;
+  right: 4px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: rgba(0,0,0,.45);
+  color: #fbf6ec;
+  font-size: .7rem;
+  font-weight: 800;
+}
+
+/* ---------- 6) Painel de detalhes ---------- */
+.painel {
+  /* Desktop: painel lateral à direita */
+  position: fixed;
+  inset: 0 0 0 auto;
+  margin: 0;
+  width: min(440px, 100%);
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid var(--linha);
+  background: var(--fundo-claro);
+  color: var(--texto);
+  box-shadow: -18px 0 40px rgba(0,0,0,.5);
+  overflow-y: auto;
+}
+.painel[open] { animation: entrar-lado .22s ease-out; }
+.painel::backdrop { background: rgba(8, 5, 3, .6); }
+
+@keyframes entrar-lado {
+  from { transform: translateX(40px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+.painel__caixa {
+  position: relative;
+  padding: 28px 24px 32px;
+  /* Faixa colorida no topo com a cor do livro aberto */
+  border-top: 8px solid var(--cor, var(--destaque));
+}
+.painel__fechar {
+  position: absolute;
+  top: 12px; right: 12px;
+  width: 44px; height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--texto);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.painel__fechar:hover { background: var(--linha); }
+
+.painel__degrau {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 48px 8px 0;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+.painel__degrau::before {
+  content: "";
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--cor-nivel, var(--texto-suave));
+}
+.painel__titulo {
+  margin: 0 40px 4px 0;
+  font-family: var(--fonte-titulo);
+  font-size: 1.6rem;
+  line-height: 1.2;
+}
+.painel__original {
+  margin: 0;
+  font-style: italic;
+  color: var(--texto-suave);
+}
+.painel__autores { margin: 6px 0 0; font-weight: 600; }
+.painel h3 {
+  margin: 24px 0 4px;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+.painel h3 + p { margin: 0; }
+#painel-link-area { margin: 20px 0 0; }
+
+.painel__lido { width: 100%; margin-top: 28px; }
+.painel__lido[aria-pressed="true"] {
+  background: transparent;
+  color: var(--texto);
+  border-color: var(--destaque);
+}
+.painel__navegacao {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+}
+.painel__navegacao .botao { flex: 1; }
+
+/* Selo "a confirmar" para dados que um humano ainda vai verificar */
+.selo-confirmar {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #4a3a12;
+  color: #f7dc8a;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+/* ---------- 7) Rodapé ---------- */
+.rodape {
+  max-width: var(--largura-max);
+  margin: 0 auto;
+  padding: 32px 16px 48px;
+  border-top: 1px solid var(--linha);
+  text-align: center;
+  color: var(--texto-suave);
+}
+.rodape__acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.rodape p { margin: 6px 0; }
+.rodape strong { color: var(--texto); }
+.rodape__nota { font-size: .85rem; }
+
+/* ---------- 8) Celular ---------- */
+@media (max-width: 720px) {
+  .topo { padding-top: 32px; }
+
+  /* Chips em uma linha que rola para o lado (só a lista rola, não a página) */
+  .temas__lista {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  /* Uma estante por vez: o JS marca a ativa com .estante--ativa */
+  .estante { display: none; margin-bottom: 32px; }
+  .estante.estante--ativa { display: block; }
+
+  .prateleira { padding: 24px 8px 0; }
+  .prateleira__tabua { margin: 0 -8px; }
+  .prateleira__livros { gap: 3px; min-height: 270px; }
+
+  /* 7 lombadas dividem a largura disponível */
+  .prateleira__livros li { flex: 1 1 0; min-width: 0; }
+  .lombada {
+    width: 100%;
+    max-width: var(--largura);
+    height: calc(var(--altura) * .8);
+    padding: 8px 2px 0;
+  }
+  .lombada__degrau { width: 22px; height: 22px; font-size: .78rem; }
+  .lombada__titulo { font-size: .82rem; max-width: 2.3em; } /* 2 colunas no celular */
+  .lombada__autor { font-size: .66rem; }
+  .lombada__nivel { width: calc(100% + 4px); margin: 0 -2px; }
+  .lombada--lido .lombada__fita { right: 4px; width: 10px; }
+  .lombada--lido .lombada__check { right: 2px; }
+
+  /* Painel vira gaveta que sobe de baixo */
+  .painel {
+    inset: auto 0 0 0;
+    width: 100%;
+    height: auto;
+    max-height: 88vh;
+    border-left: 0;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -18px 40px rgba(0,0,0,.5);
+  }
+  .painel[open] { animation: entrar-baixo .24s ease-out; }
+  .painel__caixa { border-radius: 18px 18px 0 0; padding: 24px 16px 28px; }
+}
+
+@keyframes entrar-baixo {
+  from { transform: translateY(60px); opacity: 0; }
+  to   { transform: none; opacity: 1; }
+}
+
+/* Quem prefere menos movimento não vê animações */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .lombada, .progresso__preenchido { transition: none; }
+  .painel[open] { animation: none; }
+}

@@ -1,0 +1,61 @@
+name: Sugerir livro
+description: Indique um livro para uma estante do Acelera Lê!
+title: "[Sugestão] "
+labels: ["sugestao-de-livro"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por ajudar a curadoria! Lembre: cada estante tem **no máximo 7 livros**, do iniciante ao avançado.
+        Para um livro entrar, normalmente outro sai. Os critérios estão no [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).
+  - type: dropdown
+    id: estante
+    attributes:
+      label: Estante
+      options:
+        - Java
+        - Python
+        - Inteligência Artificial
+        - Engenharia de Software
+        - Design System
+        - Nova estante (explique abaixo)
+    validations:
+      required: true
+  - type: input
+    id: titulo
+    attributes:
+      label: Título
+      placeholder: "Ex.: Entendendo Algoritmos"
+    validations:
+      required: true
+  - type: input
+    id: autor
+    attributes:
+      label: Autor(es)
+    validations:
+      required: true
+  - type: dropdown
+    id: nivel
+    attributes:
+      label: Nível sugerido
+      options:
+        - Iniciante
+        - Intermediário
+        - Avançado
+    validations:
+      required: true
+  - type: input
+    id: degrau
+    attributes:
+      label: Em que degrau entraria (1 a 7) e qual livro sairia?
+  - type: textarea
+    id: motivo
+    attributes:
+      label: Por que esse livro ajuda quem está nesse nível?
+    validations:
+      required: true
+  - type: input
+    id: edicao-pt
+    attributes:
+      label: Tem edição em português? Qual editora?
+      placeholder: "Ex.: Sim (Novatec) / Não / Não sei"
