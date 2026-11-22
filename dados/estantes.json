@@ -769,6 +769,149 @@
       ]
     },
     {
+      "id": "devops",
+      "nome": "DevOps",
+      "descricao": "Do primeiro commit até operar sistemas em produção.",
+      "livros": [
+        {
+          "degrau": 1,
+          "titulo": "Pro Git, 2ª ed.",
+          "tituloOriginal": null,
+          "autores": [
+            "Scott Chacon",
+            "Ben Straub"
+          ],
+          "nivel": "iniciante",
+          "porque": "Controle de versão é o primeiro passo de qualquer pipeline; tem tradução oficial em PT-BR, gratuita.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "tradução oficial gratuita"
+          },
+          "link": "https://git-scm.com/book/pt-br/v2",
+          "gratuito": true,
+          "cor": "#8E2F25"
+        },
+        {
+          "degrau": 2,
+          "titulo": "O Projeto Fênix",
+          "subtitulo": "Um romance sobre TI, DevOps e sobre ajudar o seu negócio a vencer",
+          "tituloOriginal": "The Phoenix Project",
+          "autores": [
+            "Gene Kim",
+            "Kevin Behr",
+            "George Spafford"
+          ],
+          "nivel": "iniciante",
+          "porque": "Romance que apresenta as ideias de DevOps contando a história de uma empresa de TI em crise; leitura leve.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Alta Books"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#24506B"
+        },
+        {
+          "degrau": 3,
+          "titulo": "Linux Eficiente na Linha de Comando",
+          "tituloOriginal": "Efficient Linux at the Command Line",
+          "autores": [
+            "Daniel J. Barrett"
+          ],
+          "nivel": "intermediario",
+          "porque": "Produtividade no terminal: combinar comandos, pipelines e scripts que fazem parte do dia a dia de DevOps.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Novatec"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#2F5B45"
+        },
+        {
+          "degrau": 4,
+          "titulo": "Manual de DevOps, 2ª ed.",
+          "tituloOriginal": "The DevOps Handbook",
+          "autores": [
+            "Gene Kim",
+            "Jez Humble",
+            "Patrick Debois",
+            "John Willis",
+            "Nicole Forsgren"
+          ],
+          "nivel": "intermediario",
+          "porque": "O guia prático das práticas DevOps: fluxo, feedback e aprendizado contínuo.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Alta Books"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#6A3C10"
+        },
+        {
+          "degrau": 5,
+          "titulo": "Entrega Contínua",
+          "subtitulo": "Como entregar software de forma rápida e confiável",
+          "tituloOriginal": "Continuous Delivery",
+          "autores": [
+            "Jez Humble",
+            "David Farley"
+          ],
+          "nivel": "intermediario",
+          "porque": "Automação de build, testes e deploy: o livro que definiu o pipeline de implantação.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Bookman"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#56306B"
+        },
+        {
+          "degrau": 6,
+          "titulo": "Kubernetes: Up and Running, 3ª ed.",
+          "tituloOriginal": null,
+          "autores": [
+            "Brendan Burns",
+            "Joe Beda",
+            "Kelsey Hightower",
+            "Lachlan Evenson"
+          ],
+          "nivel": "avancado",
+          "porque": "Containers e orquestração explicados por quem ajudou a criar o Kubernetes.",
+          "edicaoPt": {
+            "status": "confirmar",
+            "nota": "Só encontrada versão em PT traduzida com IA (plataforma O'Reilly)"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#1D4552"
+        },
+        {
+          "degrau": 7,
+          "titulo": "Engenharia de Confiabilidade do Google",
+          "subtitulo": "Como o Google administra seus sistemas de produção",
+          "tituloOriginal": "Site Reliability Engineering",
+          "autores": [
+            "Betsy Beyer",
+            "Chris Jones",
+            "Jennifer Petoff",
+            "Niall Richard Murphy"
+          ],
+          "nivel": "avancado",
+          "porque": "Como o Google opera sistemas em produção: SLOs, incidentes, plantão e automação; o original é gratuito online.",
+          "edicaoPt": {
+            "status": "confirmar",
+            "nota": "Tem edição em PT; confirmar editora"
+          },
+          "link": "https://sre.google/sre-book/table-of-contents/",
+          "gratuito": true,
+          "cor": "#7A2A3A"
+        }
+      ]
+    },
+    {
       "id": "design-system",
       "nome": "Design System",
       "descricao": "Da usabilidade básica até componentes acessíveis em escala.",
