@@ -14,6 +14,7 @@ Muita gente que está começando na programação não sabe o que ler. O **Acele
 | Python | [docs/estantes/python.md](docs/estantes/python.md) |
 | Inteligência Artificial | [docs/estantes/ia.md](docs/estantes/ia.md) |
 | Engenharia de Software | [docs/estantes/engenharia-de-software.md](docs/estantes/engenharia-de-software.md) |
+| Banco de Dados | [docs/estantes/banco-de-dados.md](docs/estantes/banco-de-dados.md) |
 | Design System | [docs/estantes/design-system.md](docs/estantes/design-system.md) |
 
 Próximas: [docs/estantes/proximas.md](docs/estantes/proximas.md)
@@ -29,7 +30,7 @@ Próximas: [docs/estantes/proximas.md](docs/estantes/proximas.md)
 ## Status
 
 - [x] Nome definido
-- [x] Curadoria v1 das 5 estantes
+- [x] Curadoria v2 das 6 estantes (maioria com edição em PT-BR)
 - [ ] Conferir as edições em português marcadas como "confirmar"
 - [x] Protótipo navegável (abra o `index.html`)
 - [x] Publicado no GitHub Pages: https://pbosoares.github.io/acelera-le/

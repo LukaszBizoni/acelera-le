@@ -26,7 +26,7 @@ Leia antes de começar:
 ## Primeira tarefa sugerida
 
 Construir o protótipo navegável descrito em `docs/produto.md`:
-1. Criar `dados/estantes.json` com as 5 estantes de `docs/estantes/`.
+1. Criar `dados/estantes.json` com as estantes de `docs/estantes/`.
 2. Criar `index.html`, `css/estilo.css` e `js/app.js`.
 3. Renderizar as estantes com lombadas, painel de detalhes, "marcar como lido" (localStorage) e o botão "Sugerir livro".
 4. Testar no navegador, no desktop e no celular.

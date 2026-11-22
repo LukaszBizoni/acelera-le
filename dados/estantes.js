@@ -44,6 +44,44 @@ window.ACELERA_LE_DADOS = {
         },
         {
           "degrau": 3,
+          "titulo": "Java 8 Prático",
+          "subtitulo": "Lambdas, Streams e os novos recursos da linguagem",
+          "tituloOriginal": null,
+          "autores": [
+            "Paulo Silveira",
+            "Rodrigo Turini"
+          ],
+          "nivel": "intermediario",
+          "porque": "Autores brasileiros; lambdas, streams e a nova API de datas num livro curto, para quem já programa em Java.",
+          "edicaoPt": {
+            "status": "original"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#7A4A12"
+        },
+        {
+          "degrau": 4,
+          "titulo": "Use a Cabeça! Padrões de Projetos",
+          "tituloOriginal": "Head First Design Patterns",
+          "autores": [
+            "Eric Freeman",
+            "Elisabeth Freeman",
+            "Kathy Sierra",
+            "Bert Bates"
+          ],
+          "nivel": "intermediario",
+          "porque": "Os padrões de projeto clássicos com a mesma didática visual do degrau 1; exemplos em Java.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Alta Books"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#2E5A3A"
+        },
+        {
+          "degrau": 5,
           "titulo": "Java Efetivo, 3ª ed.",
           "tituloOriginal": "Effective Java",
           "autores": [
@@ -57,55 +95,20 @@ window.ACELERA_LE_DADOS = {
           },
           "link": null,
           "gratuito": false,
-          "cor": "#7A4A12"
-        },
-        {
-          "degrau": 4,
-          "titulo": "Modern Java in Action",
-          "tituloOriginal": null,
-          "autores": [
-            "Raoul-Gabriel Urma",
-            "Mario Fusco",
-            "Alan Mycroft"
-          ],
-          "nivel": "intermediario",
-          "porque": "Streams, lambdas, Optional e programação funcional/reativa no Java moderno.",
-          "edicaoPt": {
-            "status": "confirmar",
-            "nota": "Não confirmada"
-          },
-          "link": null,
-          "gratuito": false,
-          "cor": "#2E5A3A"
-        },
-        {
-          "degrau": 5,
-          "titulo": "Spring in Action, 6ª ed.",
-          "tituloOriginal": null,
-          "autores": [
-            "Craig Walls"
-          ],
-          "nivel": "intermediario",
-          "porque": "Ponte para o mercado: Spring Boot, web, dados e segurança.",
-          "edicaoPt": {
-            "status": "confirmar",
-            "nota": "Edições antigas em PT: confirmar"
-          },
-          "link": null,
-          "gratuito": false,
           "cor": "#3D5A1E"
         },
         {
           "degrau": 6,
-          "titulo": "Java Concurrency in Practice",
+          "titulo": "Spring Boot",
+          "subtitulo": "Acelere o desenvolvimento de microsserviços",
           "tituloOriginal": null,
           "autores": [
-            "Brian Goetz et al."
+            "Fernando Boaglio"
           ],
-          "nivel": "avancado",
-          "porque": "A referência sobre concorrência e threads na JVM; leitura densa.",
+          "nivel": "intermediario",
+          "porque": "Ponte para o mercado: APIs, dados, segurança e microsserviços com Spring Boot; autor brasileiro.",
           "edicaoPt": {
-            "status": "nao"
+            "status": "original"
           },
           "link": null,
           "gratuito": false,
@@ -113,13 +116,13 @@ window.ACELERA_LE_DADOS = {
         },
         {
           "degrau": 7,
-          "titulo": "Java Performance, 2ª ed.",
+          "titulo": "Java Concurrency in Practice",
           "tituloOriginal": null,
           "autores": [
-            "Scott Oaks"
+            "Brian Goetz et al."
           ],
           "nivel": "avancado",
-          "porque": "JVM, garbage collector, JIT e profiling, para quem já opera sistemas em produção.",
+          "porque": "A referência sobre concorrência e threads na JVM; leitura densa.",
           "edicaoPt": {
             "status": "nao"
           },
@@ -260,19 +263,21 @@ window.ACELERA_LE_DADOS = {
     {
       "id": "ia",
       "nome": "Inteligência Artificial",
-      "descricao": "Do \"o que é IA\" até construir produtos com LLMs.",
+      "descricao": "Dos fundamentos de dados até construir produtos com LLMs.",
       "livros": [
         {
           "degrau": 1,
-          "titulo": "Artificial Intelligence: A Guide for Thinking Humans",
-          "tituloOriginal": null,
+          "titulo": "Data Science do Zero, 2ª ed.",
+          "subtitulo": "Noções fundamentais com Python",
+          "tituloOriginal": "Data Science from Scratch",
           "autores": [
-            "Melanie Mitchell"
+            "Joel Grus"
           ],
           "nivel": "iniciante",
-          "porque": "Explica o que a IA faz (e o que não faz) sem matemática; dá o mapa antes do código.",
+          "porque": "Fundamentos de Python, estatística e álgebra linear, implementando os algoritmos do zero.",
           "edicaoPt": {
-            "status": "confirmar"
+            "status": "sim",
+            "editora": "Alta Books"
           },
           "link": null,
           "gratuito": false,
@@ -280,8 +285,27 @@ window.ACELERA_LE_DADOS = {
         },
         {
           "degrau": 2,
-          "titulo": "Mãos à Obra: Aprendizado de Máquina com Scikit-Learn, Keras & TensorFlow",
-          "tituloOriginal": null,
+          "titulo": "Estatística Prática para Cientistas de Dados",
+          "tituloOriginal": "Practical Statistics for Data Scientists",
+          "autores": [
+            "Peter Bruce",
+            "Andrew Bruce"
+          ],
+          "nivel": "intermediario",
+          "porque": "Os conceitos de estatística que mais importam para dados e machine learning, direto ao ponto.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Alta Books"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#8C3A1C"
+        },
+        {
+          "degrau": 3,
+          "titulo": "Mãos à Obra",
+          "subtitulo": "Aprendizado de Máquina com Scikit-Learn, Keras & TensorFlow",
+          "tituloOriginal": "Hands-On Machine Learning with Scikit-Learn, Keras & TensorFlow",
           "autores": [
             "Aurélien Géron"
           ],
@@ -293,39 +317,20 @@ window.ACELERA_LE_DADOS = {
           },
           "link": null,
           "gratuito": false,
-          "cor": "#8C3A1C"
-        },
-        {
-          "degrau": 3,
-          "titulo": "An Introduction to Statistical Learning (with Applications in Python)",
-          "tituloOriginal": null,
-          "autores": [
-            "Gareth James",
-            "Daniela Witten",
-            "Trevor Hastie",
-            "Robert Tibshirani",
-            "Jonathan Taylor"
-          ],
-          "nivel": "intermediario",
-          "porque": "A base estatística por trás dos modelos; PDF gratuito oficial.",
-          "edicaoPt": {
-            "status": "nao"
-          },
-          "link": "https://www.statlearning.com/",
-          "gratuito": true,
           "cor": "#2F5D3A"
         },
         {
           "degrau": 4,
-          "titulo": "Deep Learning with Python, 2ª ed.",
-          "tituloOriginal": null,
+          "titulo": "Projetando Sistemas de Machine Learning",
+          "tituloOriginal": "Designing Machine Learning Systems",
           "autores": [
-            "François Chollet"
+            "Chip Huyen"
           ],
-          "nivel": "intermediario",
-          "porque": "Redes neurais explicadas pelo criador do Keras.",
+          "nivel": "avancado",
+          "porque": "Leva o modelo para produção: dados, deploy, monitoramento e manutenção de sistemas de ML.",
           "edicaoPt": {
-            "status": "confirmar"
+            "status": "sim",
+            "editora": "Alta Books"
           },
           "link": null,
           "gratuito": false,
@@ -349,15 +354,16 @@ window.ACELERA_LE_DADOS = {
         },
         {
           "degrau": 6,
-          "titulo": "AI Engineering",
-          "tituloOriginal": null,
+          "titulo": "Engenharia de IA",
+          "tituloOriginal": "AI Engineering",
           "autores": [
             "Chip Huyen"
           ],
           "nivel": "avancado",
           "porque": "Construir produtos com modelos de fundação: avaliação, RAG, agentes e custo.",
           "edicaoPt": {
-            "status": "nao"
+            "status": "sim",
+            "editora": "Novatec"
           },
           "link": null,
           "gratuito": false,
@@ -390,7 +396,7 @@ window.ACELERA_LE_DADOS = {
       "livros": [
         {
           "degrau": 1,
-          "titulo": "O Programador Pragmático",
+          "titulo": "O Programador Pragmático, 2ª ed.",
           "tituloOriginal": "The Pragmatic Programmer",
           "autores": [
             "Andrew Hunt",
@@ -399,12 +405,13 @@ window.ACELERA_LE_DADOS = {
           "nivel": "iniciante",
           "porque": "Mentalidade e hábitos de um bom profissional, independente da linguagem.",
           "edicaoPt": {
-            "status": "confirmar",
-            "nota": "Sim, confirmar editora da edição de 20 anos"
+            "status": "sim",
+            "editora": "Bookman"
           },
           "link": null,
           "gratuito": false,
-          "cor": "#8E2F25"
+          "cor": "#8E2F25",
+          "subtitulo": "Sua jornada até a maestria"
         },
         {
           "degrau": 2,
@@ -495,19 +502,148 @@ window.ACELERA_LE_DADOS = {
         },
         {
           "degrau": 7,
-          "titulo": "Designing Data-Intensive Applications",
-          "tituloOriginal": null,
+          "titulo": "Projetando Aplicações com Uso Intensivo de Dados, 2ª ed.",
+          "tituloOriginal": "Designing Data-Intensive Applications",
           "autores": [
-            "Martin Kleppmann"
+            "Martin Kleppmann",
+            "Chris Riccomini"
           ],
           "nivel": "avancado",
           "porque": "Bancos, filas, replicação e consistência: a base de sistemas distribuídos.",
           "edicaoPt": {
-            "status": "confirmar"
+            "status": "sim",
+            "editora": "Novatec"
           },
           "link": null,
           "gratuito": false,
           "cor": "#702437"
+        }
+      ]
+    },
+    {
+      "id": "banco-de-dados",
+      "nome": "Banco de Dados",
+      "descricao": "Do primeiro SELECT até como os bancos funcionam por dentro.",
+      "livros": [
+        {
+          "degrau": 1,
+          "titulo": "Use a Cabeça! SQL",
+          "tituloOriginal": "Head First SQL",
+          "autores": [
+            "Lynn Beighley"
+          ],
+          "nivel": "iniciante",
+          "porque": "SQL do zero com a didática visual da série: SELECT, INSERT, joins, subconsultas e transações.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Alta Books"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#8E2F25"
+        },
+        {
+          "degrau": 2,
+          "titulo": "Aprendendo SQL",
+          "subtitulo": "Dominando os fundamentos de SQL",
+          "tituloOriginal": "Learning SQL",
+          "autores": [
+            "Alan Beaulieu"
+          ],
+          "nivel": "iniciante",
+          "porque": "Guia direto dos fundamentos de SQL; ótimo para consolidar e consultar depois.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Novatec"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#24506B"
+        },
+        {
+          "degrau": 3,
+          "titulo": "Projeto de Banco de Dados",
+          "tituloOriginal": null,
+          "autores": [
+            "Carlos Alberto Heuser"
+          ],
+          "nivel": "intermediario",
+          "porque": "Autor brasileiro (UFRGS); modelagem conceitual (ER) e projeto lógico, clássico das faculdades.",
+          "edicaoPt": {
+            "status": "original"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#2F5B45"
+        },
+        {
+          "degrau": 4,
+          "titulo": "Sistemas de Banco de Dados",
+          "tituloOriginal": "Fundamentals of Database Systems",
+          "autores": [
+            "Ramez Elmasri",
+            "Shamkant B. Navathe"
+          ],
+          "nivel": "intermediario",
+          "porque": "O livro-texto completo: modelagem, SQL, normalização, consultas e transações.",
+          "edicaoPt": {
+            "status": "confirmar",
+            "editora": "Pearson",
+            "nota": "Sim (Pearson), confirmar edição atual"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#6A3C10"
+        },
+        {
+          "degrau": 5,
+          "titulo": "NoSQL Essencial",
+          "tituloOriginal": "NoSQL Distilled",
+          "autores": [
+            "Pramod J. Sadalage",
+            "Martin Fowler"
+          ],
+          "nivel": "intermediario",
+          "porque": "Introdução curta ao mundo NoSQL: modelos de dados, distribuição, CAP e persistência poliglota.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Novatec"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#56306B"
+        },
+        {
+          "degrau": 6,
+          "titulo": "SQL Performance Explained",
+          "tituloOriginal": null,
+          "autores": [
+            "Markus Winand"
+          ],
+          "nivel": "avancado",
+          "porque": "Índices e performance de consultas explicados para devs; a versão web oficial é gratuita.",
+          "edicaoPt": {
+            "status": "nao"
+          },
+          "link": "https://use-the-index-luke.com/",
+          "gratuito": true,
+          "cor": "#1D4552"
+        },
+        {
+          "degrau": 7,
+          "titulo": "Database Internals",
+          "tituloOriginal": null,
+          "autores": [
+            "Alex Petrov"
+          ],
+          "nivel": "avancado",
+          "porque": "Como os bancos funcionam por dentro: armazenamento, B-trees, LSM e sistemas distribuídos.",
+          "edicaoPt": {
+            "status": "nao"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#7A2A3A"
         }
       ]
     },
@@ -535,16 +671,17 @@ window.ACELERA_LE_DADOS = {
         },
         {
           "degrau": 2,
-          "titulo": "Refactoring UI",
-          "tituloOriginal": null,
+          "titulo": "Design para Quem Não É Designer",
+          "tituloOriginal": "The Non-Designer's Design Book",
           "autores": [
-            "Adam Wathan",
-            "Steve Schoger"
+            "Robin Williams"
           ],
           "nivel": "iniciante",
-          "porque": "Design visual escrito para devs: espaçamento, hierarquia e cor.",
+          "porque": "Proximidade, alinhamento, repetição e contraste: o básico de design visual para quem não é da área.",
           "edicaoPt": {
-            "status": "nao"
+            "status": "confirmar",
+            "editora": "Callis",
+            "nota": "Sim (Callis), confirmar edição atual"
           },
           "link": null,
           "gratuito": false,
@@ -552,6 +689,43 @@ window.ACELERA_LE_DADOS = {
         },
         {
           "degrau": 3,
+          "titulo": "Leis da Psicologia Aplicadas a UX",
+          "tituloOriginal": "Laws of UX",
+          "autores": [
+            "Jon Yablonski"
+          ],
+          "nivel": "intermediario",
+          "porque": "Leis como as de Fitts, Jakob e Hick: a psicologia por trás de interfaces fáceis de usar.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Novatec"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#2F5B45"
+        },
+        {
+          "degrau": 4,
+          "titulo": "Design de Interação",
+          "subtitulo": "Além da interação humano-computador",
+          "tituloOriginal": "Interaction Design",
+          "autores": [
+            "Jennifer Preece",
+            "Yvonne Rogers",
+            "Helen Sharp"
+          ],
+          "nivel": "intermediario",
+          "porque": "O livro-texto de referência em design de interação: pesquisa com usuários, protótipos e avaliação.",
+          "edicaoPt": {
+            "status": "sim",
+            "editora": "Bookman"
+          },
+          "link": null,
+          "gratuito": false,
+          "cor": "#6A3C10"
+        },
+        {
+          "degrau": 5,
           "titulo": "Atomic Design",
           "tituloOriginal": null,
           "autores": [
@@ -564,49 +738,17 @@ window.ACELERA_LE_DADOS = {
           },
           "link": "https://atomicdesign.bradfrost.com/",
           "gratuito": true,
-          "cor": "#2F5B45"
+          "cor": "#56306B"
         },
         {
-          "degrau": 4,
+          "degrau": 6,
           "titulo": "Design Systems",
           "tituloOriginal": null,
           "autores": [
             "Alla Kholmatova"
           ],
-          "nivel": "intermediario",
+          "nivel": "avancado",
           "porque": "Padrões funcionais e de percepção; como equipes criam uma linguagem comum.",
-          "edicaoPt": {
-            "status": "nao"
-          },
-          "link": null,
-          "gratuito": false,
-          "cor": "#6A3C10"
-        },
-        {
-          "degrau": 5,
-          "titulo": "Laying the Foundations",
-          "tituloOriginal": null,
-          "autores": [
-            "Andrew Couldwell"
-          ],
-          "nivel": "avancado",
-          "porque": "Guia prático para montar e documentar um design system do zero.",
-          "edicaoPt": {
-            "status": "nao"
-          },
-          "link": null,
-          "gratuito": false,
-          "cor": "#56306B"
-        },
-        {
-          "degrau": 6,
-          "titulo": "Expressive Design Systems",
-          "tituloOriginal": null,
-          "autores": [
-            "Yesenia Perez-Cruz"
-          ],
-          "nivel": "avancado",
-          "porque": "Como escalar o sistema sem perder a identidade da marca.",
           "edicaoPt": {
             "status": "nao"
           },
@@ -616,15 +758,16 @@ window.ACELERA_LE_DADOS = {
         },
         {
           "degrau": 7,
-          "titulo": "Inclusive Components",
+          "titulo": "Acessibilidade na Web",
+          "subtitulo": "Boas práticas para construir sites e aplicações acessíveis",
           "tituloOriginal": null,
           "autores": [
-            "Heydon Pickering"
+            "Reinaldo Ferraz"
           ],
           "nivel": "avancado",
-          "porque": "Componentes acessíveis de verdade: menus, abas, modais.",
+          "porque": "Autor brasileiro (W3C Brasil); boas práticas, diretrizes e leis para sites e componentes acessíveis.",
           "edicaoPt": {
-            "status": "nao"
+            "status": "original"
           },
           "link": null,
           "gratuito": false,

@@ -33,6 +33,7 @@ acelera-le/
 │       ├── python.md
 │       ├── ia.md
 │       ├── engenharia-de-software.md
+│       ├── banco-de-dados.md
 │       ├── design-system.md
 │       └── proximas.md
 ├── .github/
@@ -73,6 +74,9 @@ acelera-le/
 
 - `nivel`: `"iniciante" | "intermediario" | "avancado"` (livros de transição, como 🟢→🟡, usam o nível mais alto)
 - `edicaoPt.status`: `"sim" | "nao" | "confirmar" | "original"` (livro escrito em PT)
+- `edicaoPt.nota` (opcional): anotação da curadoria, mostrada quando o status é `"confirmar"`
+- `subtitulo` (opcional): aparece no painel; a lombada mostra só o `titulo`, para caber
+- **Preferência da curadoria:** sempre que existir, use o título e a edição em português do Brasil
 
 ## Abrir com dois cliques (`file://`)
 

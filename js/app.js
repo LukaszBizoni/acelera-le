@@ -130,9 +130,9 @@ function desenharLombada(estante, livro, total) {
   botao.type = "button";
   botao.dataset.id = id;
   botao.style.setProperty("--cor", livro.cor);
-  // Altura entre 270px e 320px; títulos longos ganham lombada mais grossa
-  botao.style.setProperty("--altura", `${270 + (n % 51)}px`);
-  botao.style.setProperty("--largura", `${(livro.titulo.length > 28 ? 92 : 80) + (n % 12)}px`);
+  // Altura entre 290px e 340px; títulos longos ganham lombada mais grossa
+  botao.style.setProperty("--altura", `${290 + (n % 51)}px`);
+  botao.style.setProperty("--largura", `${(livro.titulo.length > 26 ? 100 : 86) + (n % 10)}px`);
 
   // Partes visuais (o leitor de tela usa o aria-label, mais abaixo)
   const fita = criar("span", "lombada__fita");
@@ -290,6 +290,8 @@ function preencherPainel() {
 
   $("painel-degrau").textContent = `Degrau ${livro.degrau} de ${total} · ${NOMES_NIVEL[livro.nivel]}`;
   $("painel-titulo").textContent = livro.titulo;
+  $("painel-subtitulo").textContent = livro.subtitulo || "";
+  $("painel-subtitulo").hidden = !livro.subtitulo;
   $("painel-original").textContent = livro.tituloOriginal ? `Título original: ${livro.tituloOriginal}` : "";
   $("painel-original").hidden = !livro.tituloOriginal;
   $("painel-autores").textContent = juntarAutores(livro.autores);
