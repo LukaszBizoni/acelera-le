@@ -1,37 +1,40 @@
 /* =========================================================
    Acelera Lê! · estilos
+   Visual inspirado no tema da Acelera Dev: fundo quase preto,
+   verde-água em degradê, títulos em Archivo bem pesado,
+   texto em Inter e rótulos em Geist Mono.
+
    Organização: 1) variáveis  2) base  3) topo  4) estantes
    5) lombadas  6) painel  7) rodapé  8) celular
    ========================================================= */
 
 /* ---------- 1) Variáveis (cores e medidas) ---------- */
 :root {
-  /* Fundo de biblioteca: marrom bem escuro, quase preto */
-  --fundo: #17110c;
-  --fundo-claro: #221912;
-  --texto: #f6eee1;          /* creme: contraste alto sobre o fundo */
-  --texto-suave: #cbbba6;    /* ainda passa no WCAG AA sobre o fundo */
-  --destaque: #e8a13a;       /* âmbar da marca */
-  --destaque-escuro: #1b130b;/* texto sobre o âmbar */
-  --linha: #3a2c20;
+  --fundo: #050505;
+  --superficie: #0b0d0d;      /* cartões e painel */
+  --superficie-2: #131716;
+  --texto: #f2f4f1;
+  --texto-suave: #c4cbc7;     /* passa no WCAG AA sobre o fundo */
+  --texto-apagado: #8e9894;   /* só para detalhes, nunca para texto longo */
+  --linha: #1f2524;
 
-  /* Madeira da prateleira */
-  --madeira: #6b4325;
-  --madeira-clara: #8a5a32;
-  --madeira-escura: #3f2714;
+  /* Verde-água da marca */
+  --marca: #00e0a4;
+  --marca-2: #00b9c8;
+  --degrade: linear-gradient(90deg, var(--marca) 0%, var(--marca-2) 100%);
+  --texto-sobre-marca: #00140e;
+  --brilho: 0 0 24px rgba(0, 224, 164, .35);
 
   /* Níveis (faixa na base da lombada) */
-  --iniciante: #4cbf6b;
+  --iniciante: #00e0a4;
   --intermediario: #f2c94c;
-  --avancado: #e5534b;
+  --avancado: #ff5a4e;
 
-  /* Fita de "lido" */
-  --fita: #e8a13a;
-
-  --raio: 10px;
-  --largura-max: 1080px;
-  --fonte: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
-  --fonte-titulo: Georgia, "Times New Roman", serif;
+  --raio: 14px;
+  --largura-max: 1120px;
+  --fonte: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --fonte-titulo: "Archivo", "Segoe UI", system-ui, sans-serif;
+  --fonte-mono: "Geist Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
 }
 
 /* ---------- 2) Base ---------- */
@@ -47,18 +50,19 @@ body {
   color: var(--texto);
   font-family: var(--fonte);
   font-size: 16px;
-  line-height: 1.5;
-  /* Um leve brilho quente no alto, como uma luminária */
-  background-image: radial-gradient(ellipse 80% 40% at 50% 0%, #3a2616 0%, transparent 70%);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  /* Um brilho verde bem discreto no alto da página */
+  background-image: radial-gradient(ellipse 70% 35% at 50% 0%, rgba(0, 224, 164, .10) 0%, transparent 70%);
   background-repeat: no-repeat;
 }
 
-a { color: var(--destaque); }
-a:hover { color: #f4c06e; }
+a { color: var(--marca); }
+a:hover { color: #5cf0c8; }
 
 /* Contorno de foco bem visível para quem navega pelo teclado */
 :focus-visible {
-  outline: 3px solid var(--destaque);
+  outline: 3px solid var(--marca);
   outline-offset: 3px;
 }
 
@@ -75,10 +79,10 @@ a:hover { color: #f4c06e; }
 .pular {
   position: absolute;
   left: 16px; top: -60px;
-  background: var(--destaque);
-  color: var(--destaque-escuro);
+  background: var(--marca);
+  color: var(--texto-sobre-marca);
   padding: 8px 14px;
-  border-radius: var(--raio);
+  border-radius: 999px;
   font-weight: 700;
   z-index: 10;
 }
@@ -89,71 +93,127 @@ a:hover { color: #f4c06e; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  min-height: 44px;           /* área de toque confortável */
-  padding: 10px 18px;
+  gap: 8px;
+  min-height: 48px;           /* área de toque confortável */
+  padding: 12px 24px;
   border-radius: 999px;
-  border: 2px solid transparent;
-  font: inherit;
-  font-weight: 600;
+  border: 1px solid transparent;
+  font-family: var(--fonte-titulo);
+  font-size: .95rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
 }
 .botao--destaque {
-  background: var(--destaque);
-  color: var(--destaque-escuro);
+  background: var(--degrade);
+  color: var(--texto-sobre-marca);
+  box-shadow: var(--brilho);
 }
-.botao--destaque:hover { background: #f4b75a; color: var(--destaque-escuro); }
+.botao--destaque:hover {
+  color: var(--texto-sobre-marca);
+  transform: translateY(-1px);
+  box-shadow: 0 0 34px rgba(0, 224, 164, .5);
+}
 .botao--discreto {
-  background: transparent;
+  background: var(--superficie);
   color: var(--texto);
   border-color: var(--linha);
 }
-.botao--discreto:hover { border-color: var(--texto-suave); }
-.botao:disabled { opacity: .45; cursor: not-allowed; }
+.botao--discreto:hover { border-color: var(--marca); }
+.botao:disabled { opacity: .4; cursor: not-allowed; transform: none; }
 
 /* ---------- 3) Topo ---------- */
 .topo {
-  padding: 48px 16px 0;
+  position: relative;
+  overflow: hidden;           /* a palavra gigante não cria rolagem lateral */
+  padding: 56px 16px 0;
   text-align: center;
 }
+/* "LEITURA" gigante e só com contorno, atrás do título */
+.topo__fundo {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--fonte-titulo);
+  font-weight: 900;
+  font-size: clamp(6rem, 22vw, 18rem);
+  line-height: 1;
+  letter-spacing: -.04em;
+  color: transparent;
+  -webkit-text-stroke: 2px #141918;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
 .topo__conteudo {
-  max-width: 640px;
+  position: relative;
+  max-width: 680px;
   margin: 0 auto;
+}
+.selo-marca {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 6px 14px;
+  border: 1px solid var(--linha);
+  border-radius: 999px;
+  background: var(--superficie);
+  font-family: var(--fonte-mono);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
 }
 .logo {
   margin: 0;
   font-family: var(--fonte-titulo);
-  font-size: clamp(2.4rem, 7vw, 3.6rem);
-  line-height: 1.1;
-  letter-spacing: -0.5px;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 9vw, 5rem);
+  line-height: .95;
+  letter-spacing: -.035em;
+  text-transform: uppercase;
 }
-.logo span { color: var(--destaque); }
+/* "LÊ!" com o degradê da marca */
+.logo span {
+  background: var(--degrade);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 .subtitulo {
-  margin: 6px 0 0;
-  font-size: 1.1rem;
-  color: var(--texto-suave);
+  margin: 14px 0 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--texto);
 }
 .explicacao {
-  margin: 18px auto 0;
-  max-width: 52ch;
+  margin: 14px auto 0;
+  max-width: 54ch;
+  color: var(--texto-suave);
 }
 
 .legenda {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 20px;
-  margin: 18px 0 0;
+  gap: 8px 22px;
+  margin: 22px 0 0;
   padding: 0;
   list-style: none;
-  font-size: .95rem;
+  font-family: var(--fonte-mono);
+  font-size: .78rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   color: var(--texto-suave);
 }
 .legenda li { display: inline-flex; align-items: center; gap: 8px; }
 .legenda__cor {
-  width: 22px; height: 8px;
-  border-radius: 2px;
+  width: 22px; height: 6px;
+  border-radius: 999px;
 }
 .legenda__cor--iniciante { background: var(--iniciante); }
 .legenda__cor--intermediario { background: var(--intermediario); }
@@ -164,9 +224,10 @@ a:hover { color: #f4c06e; }
   position: sticky;
   top: 0;
   z-index: 5;
-  margin-top: 28px;
+  margin-top: 32px;
   padding: 12px 0;
-  background: rgba(23, 17, 12, .94);
+  background: rgba(5, 5, 5, .9);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--linha);
 }
 .temas__lista {
@@ -184,26 +245,28 @@ a:hover { color: #f4c06e; }
   padding: 8px 16px;
   border-radius: 999px;
   border: 1px solid var(--linha);
-  background: var(--fundo-claro);
+  background: var(--superficie);
   color: var(--texto);
   font: inherit;
-  font-size: .95rem;
+  font-size: .92rem;
+  font-weight: 600;
   cursor: pointer;
   white-space: nowrap;
 }
-.chip:hover { border-color: var(--texto-suave); }
+.chip:hover { border-color: var(--marca); }
 .chip[aria-current="true"] {
-  background: var(--destaque);
-  border-color: var(--destaque);
-  color: var(--destaque-escuro);
+  background: var(--degrade);
+  border-color: transparent;
+  color: var(--texto-sobre-marca);
   font-weight: 700;
+  box-shadow: var(--brilho);
 }
 
 /* ---------- 4) Estantes ---------- */
 .estantes {
   max-width: var(--largura-max);
   margin: 0 auto;
-  padding: 24px 16px 8px;
+  padding: 32px 16px 8px;
 }
 .estantes:focus { outline: none; }
 .carregando, .erro {
@@ -215,7 +278,7 @@ a:hover { color: #f4c06e; }
 .estante {
   /* Espaço para o topo grudado não cobrir o título ao pular pelo chip */
   scroll-margin-top: 80px;
-  margin: 0 0 56px;
+  margin: 0 0 64px;
 }
 .estante__cabecalho {
   display: flex;
@@ -228,11 +291,13 @@ a:hover { color: #f4c06e; }
 .estante__nome {
   margin: 0;
   font-family: var(--fonte-titulo);
-  font-size: 1.75rem;
-  line-height: 1.2;
+  font-weight: 900;
+  font-size: clamp(1.7rem, 4vw, 2.2rem);
+  line-height: 1.1;
+  letter-spacing: -.03em;
 }
 .estante__descricao {
-  margin: 2px 0 0;
+  margin: 4px 0 0;
   color: var(--texto-suave);
 }
 
@@ -241,37 +306,49 @@ a:hover { color: #f4c06e; }
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: .95rem;
+  font-family: var(--fonte-mono);
+  font-size: .8rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
   color: var(--texto-suave);
 }
 .progresso__barra {
   width: 120px;
-  height: 8px;
+  height: 6px;
   border-radius: 999px;
-  background: var(--linha);
+  background: var(--superficie-2);
   overflow: hidden;
 }
 .progresso__preenchido {
   height: 100%;
   width: 0;
-  background: var(--destaque);
+  background: var(--degrade);
   border-radius: inherit;
   transition: width .3s ease;
 }
 
-/* A prateleira: os livros ficam em pé sobre a tábua */
+/* A prateleira: um cartão escuro com borda em degradê no topo,
+   e os livros em pé sobre a "tábua" iluminada */
 .prateleira {
   position: relative;
-  padding: 28px 20px 0;
-  border-radius: 6px 6px 0 0;
-  /* Fundo do nicho da estante, mais escuro que a madeira */
-  background: linear-gradient(180deg, #120d09 0%, #1d150e 100%);
-  box-shadow: inset 0 10px 24px rgba(0, 0, 0, .6);
+  padding: 32px 20px 0;
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  background: linear-gradient(180deg, var(--superficie) 0%, #070909 100%);
+  overflow: hidden;
+}
+.prateleira::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 2px;
+  background: var(--degrade);
+  opacity: .8;
 }
 .prateleira__livros {
   display: flex;
   align-items: flex-end;   /* todos apoiados na tábua */
-  gap: 6px;
+  gap: 8px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -279,21 +356,13 @@ a:hover { color: #f4c06e; }
 }
 .prateleira__livros li { display: flex; }
 
-/* A tábua de madeira embaixo dos livros */
+/* A tábua: grafite com uma linha de luz verde em cima */
 .prateleira__tabua {
-  height: 22px;
+  height: 18px;
   margin: 0 -20px;
-  border-radius: 0 0 4px 4px;
-  background:
-    repeating-linear-gradient(92deg, rgba(0,0,0,.08) 0 3px, transparent 3px 11px),
-    linear-gradient(180deg, var(--madeira-clara) 0%, var(--madeira) 45%, var(--madeira-escura) 100%);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, .55);
-}
-
-/* Botão "sugerir livro para esta estante", ao lado do progresso */
-.estante__sugerir {
-  font-size: .9rem;
-  color: var(--texto-suave);
+  background: linear-gradient(180deg, #1c2221 0%, #0e1111 100%);
+  border-top: 2px solid var(--marca);
+  box-shadow: 0 -8px 24px rgba(0, 224, 164, .18);
 }
 
 /* ---------- 5) Lombadas ---------- */
@@ -309,25 +378,25 @@ a:hover { color: #f4c06e; }
   height: var(--altura);
   padding: 10px 4px 0;
   border: 0;
-  border-radius: 3px 3px 1px 1px;
+  border-radius: 4px 4px 1px 1px;
   background-color: var(--cor, #444);
-  /* Brilho e sombra que dão volume de livro */
+  /* Sombra nas bordas para dar volume de livro */
   background-image:
     linear-gradient(90deg, rgba(0,0,0,.30) 0%, rgba(255,255,255,.05) 12%, rgba(255,255,255,0) 28%, rgba(0,0,0,0) 80%, rgba(0,0,0,.25) 100%);
   color: #ffffff;
+  font: inherit;
+  cursor: pointer;
+  box-shadow: 2px 0 0 rgba(0,0,0,.4);
   /* Letras mais definidas */
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font: inherit;
-  cursor: pointer;
-  box-shadow: 2px 0 0 rgba(0,0,0,.35);
   transition: transform .18s ease, box-shadow .18s ease;
 }
 /* Livro "sai" da prateleira ao passar o mouse ou receber foco */
 .lombada:hover,
 .lombada:focus-visible {
   transform: translateY(-14px);
-  box-shadow: 0 14px 18px rgba(0,0,0,.55), 2px 0 0 rgba(0,0,0,.35);
+  box-shadow: 0 16px 24px rgba(0,0,0,.6), 0 0 0 2px rgba(0, 224, 164, .55);
 }
 .lombada:focus-visible { outline-offset: 2px; }
 
@@ -338,10 +407,11 @@ a:hover { color: #f4c06e; }
   flex: none;
   width: 26px; height: 26px;
   border-radius: 50%;
-  background: #fbf6ec;
-  color: #1b130b;
-  font-size: .85rem;
-  font-weight: 800;
+  background: #ffffff;
+  color: #0b0d0d;
+  font-family: var(--fonte-mono);
+  font-size: .82rem;
+  font-weight: 600;
 }
 
 /* Título escrito em pé */
@@ -350,10 +420,9 @@ a:hover { color: #f4c06e; }
   min-height: 0;
   margin-top: 10px;
   writing-mode: vertical-rl;
-  /* Fonte sem serifa e em negrito: fica bem mais nítida em pé e em tamanho pequeno */
-  font-family: var(--fonte);
+  font-family: var(--fonte-titulo);
   font-size: 1.02rem;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.15;
   letter-spacing: .01em;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .45);
@@ -369,7 +438,7 @@ a:hover { color: #f4c06e; }
   writing-mode: vertical-rl;
   font-size: .78rem;
   font-weight: 600;
-  color: #f3ead9;
+  color: #f3f5f2;
   text-shadow: 0 1px 1px rgba(0, 0, 0, .45);
   white-space: nowrap;
   overflow: hidden;
@@ -380,7 +449,7 @@ a:hover { color: #f4c06e; }
 .lombada__nivel {
   flex: none;
   width: calc(100% + 8px);
-  height: 12px;
+  height: 10px;
   margin: 0 -4px;
   border-radius: 0 0 1px 1px;
 }
@@ -397,22 +466,22 @@ a:hover { color: #f4c06e; }
   right: 9px;
   width: 12px;
   height: 46px;
-  background: var(--fita);
+  background: var(--degrade);
   /* Corte em "V" na ponta da fita */
   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
-  box-shadow: 0 2px 3px rgba(0,0,0,.35);
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.4));
 }
 .lombada__check { display: none; }
 .lombada--lido .lombada__check {
   display: grid;
   place-items: center;
   position: absolute;
-  bottom: 18px;
+  bottom: 16px;
   right: 4px;
   width: 18px; height: 18px;
   border-radius: 50%;
-  background: rgba(0,0,0,.45);
-  color: #fbf6ec;
+  background: var(--marca);
+  color: var(--texto-sobre-marca);
   font-size: .7rem;
   font-weight: 800;
 }
@@ -430,13 +499,13 @@ a:hover { color: #f4c06e; }
   padding: 0;
   border: 0;
   border-left: 1px solid var(--linha);
-  background: var(--fundo-claro);
+  background: var(--superficie);
   color: var(--texto);
-  box-shadow: -18px 0 40px rgba(0,0,0,.5);
+  box-shadow: -24px 0 48px rgba(0,0,0,.6);
   overflow-y: auto;
 }
 .painel[open] { animation: entrar-lado .22s ease-out; }
-.painel::backdrop { background: rgba(8, 5, 3, .6); }
+.painel::backdrop { background: rgba(0, 0, 0, .7); }
 
 @keyframes entrar-lado {
   from { transform: translateX(40px); opacity: 0; }
@@ -447,46 +516,51 @@ a:hover { color: #f4c06e; }
   position: relative;
   padding: 28px 24px 32px;
   /* Faixa colorida no topo com a cor do livro aberto */
-  border-top: 8px solid var(--cor, var(--destaque));
+  border-top: 6px solid var(--cor, var(--marca));
 }
 .painel__fechar {
   position: absolute;
   top: 12px; right: 12px;
   width: 44px; height: 44px;
-  border: 0;
+  border: 1px solid var(--linha);
   border-radius: 50%;
-  background: transparent;
+  background: var(--superficie-2);
   color: var(--texto);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1;
   cursor: pointer;
 }
-.painel__fechar:hover { background: var(--linha); }
+.painel__fechar:hover { border-color: var(--marca); }
 
 .painel__degrau {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin: 0 48px 8px 0;
-  font-size: .9rem;
+  margin: 0 48px 10px 0;
+  font-family: var(--fonte-mono);
+  font-size: .78rem;
   font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
   color: var(--texto-suave);
 }
 .painel__degrau::before {
   content: "";
-  width: 12px; height: 12px;
+  width: 10px; height: 10px;
   border-radius: 50%;
   background: var(--cor-nivel, var(--texto-suave));
 }
 .painel__titulo {
   margin: 0 40px 4px 0;
   font-family: var(--fonte-titulo);
-  font-size: 1.6rem;
-  line-height: 1.2;
+  font-weight: 900;
+  font-size: 1.75rem;
+  line-height: 1.1;
+  letter-spacing: -.02em;
 }
 .painel__subtitulo {
-  margin: 0 0 6px;
-  font-size: 1.05rem;
+  margin: 4px 0 6px;
+  font-size: 1.02rem;
   color: var(--texto);
 }
 .painel__original {
@@ -494,28 +568,31 @@ a:hover { color: #f4c06e; }
   font-style: italic;
   color: var(--texto-suave);
 }
-.painel__autores { margin: 6px 0 0; font-weight: 600; }
+.painel__autores { margin: 8px 0 0; font-weight: 600; }
 .painel h3 {
-  margin: 24px 0 4px;
-  font-size: .8rem;
-  letter-spacing: .08em;
+  margin: 26px 0 6px;
+  font-family: var(--fonte-mono);
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--texto-suave);
+  color: var(--marca);
 }
-.painel h3 + p { margin: 0; }
-#painel-link-area { margin: 20px 0 0; }
+.painel h3 + p { margin: 0; color: var(--texto-suave); }
+#painel-link-area { margin: 22px 0 0; }
 
 .painel__lido { width: 100%; margin-top: 28px; }
 .painel__lido[aria-pressed="true"] {
-  background: transparent;
-  color: var(--texto);
-  border-color: var(--destaque);
+  background: var(--superficie-2);
+  color: var(--marca);
+  border-color: var(--marca);
+  box-shadow: none;
 }
 .painel__navegacao {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 14px;
+  margin-top: 12px;
 }
 .painel__navegacao .botao { flex: 1; }
 
@@ -525,17 +602,20 @@ a:hover { color: #f4c06e; }
   margin-left: 6px;
   padding: 1px 8px;
   border-radius: 999px;
-  background: #4a3a12;
+  background: #2e2a12;
   color: #f7dc8a;
-  font-size: .8rem;
+  font-family: var(--fonte-mono);
+  font-size: .72rem;
   font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
 
 /* ---------- 7) Rodapé ---------- */
 .rodape {
   max-width: var(--largura-max);
   margin: 0 auto;
-  padding: 32px 16px 48px;
+  padding: 40px 16px 56px;
   border-top: 1px solid var(--linha);
   text-align: center;
   color: var(--texto-suave);
@@ -545,15 +625,22 @@ a:hover { color: #f4c06e; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 .rodape p { margin: 6px 0; }
 .rodape strong { color: var(--texto); }
-.rodape__nota { font-size: .85rem; }
+.rodape__nota {
+  font-family: var(--fonte-mono);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--texto-apagado);
+}
 
 /* ---------- 8) Celular ---------- */
 @media (max-width: 720px) {
-  .topo { padding-top: 32px; }
+  .topo { padding-top: 40px; }
+  .topo__fundo { top: 24px; }
 
   /* Chips em uma linha que rola para o lado (só a lista rola, não a página) */
   .temas__lista {
@@ -567,9 +654,9 @@ a:hover { color: #f4c06e; }
   .estante { display: none; margin-bottom: 32px; }
   .estante.estante--ativa { display: block; }
 
-  .prateleira { padding: 24px 8px 0; }
+  .prateleira { padding: 28px 8px 0; }
   .prateleira__tabua { margin: 0 -8px; }
-  .prateleira__livros { gap: 3px; min-height: 270px; }
+  .prateleira__livros { gap: 3px; min-height: 290px; }
 
   /* 7 lombadas dividem a largura disponível */
   .prateleira__livros li { flex: 1 1 0; min-width: 0; }
@@ -579,7 +666,7 @@ a:hover { color: #f4c06e; }
     height: calc(var(--altura) * .8);
     padding: 8px 2px 0;
   }
-  .lombada__degrau { width: 22px; height: 22px; font-size: .78rem; }
+  .lombada__degrau { width: 22px; height: 22px; font-size: .74rem; }
   .lombada__titulo { font-size: .86rem; max-width: 2.3em; } /* 2 colunas no celular */
   .lombada__autor { font-size: .7rem; }
   .lombada__nivel { width: calc(100% + 4px); margin: 0 -2px; }
@@ -593,11 +680,11 @@ a:hover { color: #f4c06e; }
     height: auto;
     max-height: 88vh;
     border-left: 0;
-    border-radius: 18px 18px 0 0;
-    box-shadow: 0 -18px 40px rgba(0,0,0,.5);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -24px 48px rgba(0,0,0,.6);
   }
   .painel[open] { animation: entrar-baixo .24s ease-out; }
-  .painel__caixa { border-radius: 18px 18px 0 0; padding: 24px 16px 28px; }
+  .painel__caixa { border-radius: 20px 20px 0 0; padding: 24px 16px 28px; }
 }
 
 @keyframes entrar-baixo {
@@ -608,6 +695,6 @@ a:hover { color: #f4c06e; }
 /* Quem prefere menos movimento não vê animações */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .lombada, .progresso__preenchido { transition: none; }
+  .lombada, .progresso__preenchido, .botao { transition: none; }
   .painel[open] { animation: none; }
 }
